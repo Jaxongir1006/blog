@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Blog</title>
+</head>
+<body>
+    <h1>Create Blog</h1>
+    <form method="post", enctype="multipart/form-data">
+
+        {% csrf_token %}
+        <p><strong>Author:</strong> {{ user.first_name }} {{ user.last_name }}</p>
+        {{ form.as_p }}
+
+        <button>Create Blog</button>
+    </form>
+</body>
+</html>

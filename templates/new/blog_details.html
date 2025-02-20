@@ -1,0 +1,182 @@
+{% extends 'new/base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Single Post Section Begin -->
+    <section class="single-post spad">
+        <div class="single-post__hero set-bg" data-setbg="{{ blog.imageURL }}"></div>
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-8">
+                    <div class="single-post__title">
+                        <div class="single-post__title__meta">
+                            <h2>{{ blog.update_time.day }}</h2>
+                            <span>{{ blog.update_time.month }}</span>
+                        </div>
+                        <div class="single-post__title__text">
+                            <ul class="label">
+                                <li>{{ blog.category }}</li>
+                            </ul>
+                            <h4>{{ blog.title }}</h4>
+                            <ul class="widget">
+                                <li>{% trans "by" %} {{ blog.author }}</li>
+                                <li>{{ blog.comment_count }} {% trans "Comment" %}</li>
+                            </ul>
+                        </div>
+                        <p>{% trans "Likes:" %} <span id="like" >{{ blog.likes.count }}</span></p>
+                        <div>
+                            <p><strong style="cursor: pointer;" class="fa fa-heart-o" onclick="like_blog({{ blog.id }})"></strong></p>
+                        </div>
+                        <div>
+                            <img onclick="save({{ blog.id }})" id="bookmark" style="cursor: pointer; width: 15px;" src="{% if check2 %} {% static 'img/bookmark.png' %} {% else %} {% static 'img/save-instagram.png' %} {% endif %}" alt="">
+                        </div>
+
+                    </div>
+                    <div class="single-post__social__item">
+                        <ul>
+                            <li><a href="{{ contact.telegram }}"><i class="fa fa-telegram"></i></a></li>
+                            <li><a href="{{ contact.instagram }}"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="{{ contact.youtube }}"><i class="fa fa-youtube-play"></i></a></li>
+                            <li><a href="{{ contact.facebook }}"><i class="fa fa-facebook"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="single-post__top__text">
+                        <p>{{ blog.description }}</p>
+                    </div>
+                    
+                    <div class="single-post__next__previous">
+                        <div class="row">
+                            {% if previous %}
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <a href="{% url 'blog_details' previous.id %}" class="single-post__previous">
+                                    <h6><span class="arrow_carrot-left"></span> {% trans "Previous posts" %}</h6>
+                                    <div class="single-post__previous__meta">
+                                        <h4>{{ previous.update_time.day }}</h4>
+                                        <span>{{ previous.update_time.month }}</span>
+                                    </div>
+                                    <div class="single-post__previous__text">
+                                        <span>{{ previous.category }}</span>
+                                        <h5>{{ previous.title }}</h5>
+                                    </div>
+                                </a>
+                            </div>
+                            {% endif %}
+                            {% if next %}
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <a href="{% url 'blog_details' next.id %}" class="single-post__next">
+                                    <h6>{% trans "Next posts" %} <span class="arrow_carrot-right"></span> </h6>
+                                    <div class="single-post__next__meta">
+                                        <h4>{{ next.update_time.day }}</h4>
+                                        <span>{{ next.update_time.month }}</span>
+                                    </div>
+                                    <div class="single-post__next__text">
+                                        <span>{{ next.category }}</span>
+                                        <h5>{{ next.title }}</h5>
+                                    </div>
+                                </a>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="single-post__author__profile">
+                        <div class="single-post__author__profile__pic">
+                            <img src="{{ blog.author.imageURL }}" alt="">
+                        </div>
+                        <div class="single-post__author__profile__text">
+                            <h4>{{ blog.author }}</h4>
+                            <p>{{ blog.author.bio }}</p>
+
+                        </div>
+                    </div>
+                    <div class="single-post__comment">
+                        <div class="widget__title">
+                            <h4>{{ blog.comment_count }} Comment</h4>
+                        </div>
+                        {% for comment in comments %}
+                            <div class="single-post__comment__item">
+                                <div class="single-post__comment__item__pic">
+                                    <img src="{{ comment.user.imageURL }}" alt="">
+                                </div>
+                                <div class="single-post__comment__item__text">
+                                    <h5>{{ comment.user }}</h5>
+                                    <span>{{ comment.created_time }}</span>
+                                    <p>{{ comment.text }}</p>
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                        <li><span onclick="reply('{{ comment.text }}',{{ comment.id }})"><i class="fa fa-share-square-o"></i></span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            {% for reply in comment.replies.all %}
+                                <div class="single-post__comment__item single-post__comment__item--reply">
+                                    <div class="single-post__comment__item__pic">
+                                        <img src="{{ reply.user.imageURL }}" alt="">
+                                    </div>
+                                    <div class="single-post__comment__item__text">
+                                        <h5>{{ reply.user }}</h5>
+                                        <span>{{ reply.created_time }}</span>
+                                        <p>{{ reply.text }}</p>
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                            <li><span onclick="reply('{{ reply.text }}', {{ reply.id }})" ><i class="fa fa-share-square-o"></i></span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                    <div class="single-post__leave__comment">
+                        <div class="widget__title">
+                            <h4>{% trans "Leave a comment" %}</h4>
+                        </div>
+                        <form action="{% url 'create_comment' blog.id %}" method="post">
+                            {% csrf_token %}
+                            <div id="reply_box"></div>
+                            <input type="hidden" name="reply" id="reply_input">
+                            <textarea  name="text" placeholder="Message"></textarea>
+                            <button type="submit" class="site-btn">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block script %}
+<script>
+
+    function reply(comment_text, comment_id){
+        console.log(comment_id)
+        r = document.getElementById('reply_box');
+        document.getElementById('reply_input').value = comment_id;
+        r.style.display = 'block';
+        r.innerHTML = comment_text;
+
+    }
+
+    function like_blog(blog_id){
+        url = `/like_view/${blog_id}/`
+        fetch(url).then((response)=>{
+            response.json().then((data) => {
+                document.getElementById('like').innerHTML = data['like']
+            })
+        })
+    }
+    function save(blog_id){
+        url = `/save_blog/${blog_id}`
+        fetch(url).then((response)=>{
+            response.json().then((data) => {
+                icon = document.getElementById("bookmark")
+                if (data['check2']){
+                    icon.src = "/static/img/save-instagram.png"
+                }
+                else{
+                    icon.src = "/static/img/bookmark.png"
+                }
+            })
+        })
+    }
+
+</script>
+{% endblock %}

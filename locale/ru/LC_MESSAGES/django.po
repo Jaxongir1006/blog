@@ -1,0 +1,172 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-13 20:05+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\blogging\models.py:9
+msgid "name"
+msgstr "имя"
+
+#: .\blogging\models.py:12
+msgid "image"
+msgstr "изображение"
+
+#: .\blogging\models.py:18
+msgid "Category"
+msgstr "Категория"
+
+#: .\blogging\models.py:19 .\templates\new\blogs.html:70
+#: .\templates\new\index.html:176
+msgid "Categories"
+msgstr "Категории"
+
+#: .\blogging\models.py:59
+msgid "Yangi blog"
+msgstr "Новый блог"
+
+#: .\blogging\models.py:60
+msgid "Yangi bloglar"
+msgstr "Новые блоги"
+
+#: .\blogging\models.py:100 .\templates\new\blog_details.html:23
+msgid "Comment"
+msgstr "Комментарий"
+
+#: .\blogging\models.py:101
+msgid "Comments"
+msgstr "Комментарии"
+
+#: .\blogging\models.py:108 .\blogging\models.py:119
+msgid "FooterImages"
+msgstr "Изображения нижнего колонтитула"
+
+#: .\blogging\models.py:118
+#, fuzzy
+#| msgid "FooterImages"
+msgstr "Изображения нижнего колонтитула"
+
+#: .\templates\new\about.html:16 .\templates\new\base.html:43
+#: .\templates\new\base.html:82 .\templates\new\base.html:136
+#: .\templates\new\blogs.html:19 .\templates\new\contact.html:14
+msgid "Home"
+msgstr "Дом"
+
+#: .\templates\new\about.html:17 .\templates\new\base.html:45
+#: .\templates\new\base.html:101
+msgid "About"
+msgstr "О чем"
+
+#: .\templates\new\about.html:30
+msgid "Hello every one !!!"
+msgstr "Всем привет !!!"
+
+#: .\templates\new\about.html:34
+msgid "You didn't write anything here..."
+msgstr "Вы здесь ничего не написали..."
+
+#: .\templates\new\base.html:44 .\templates\new\base.html:83
+msgid "Blogs"
+msgstr "Блоги"
+
+#: .\templates\new\base.html:46 .\templates\new\base.html:102
+#: .\templates\new\contact.html:12 .\templates\new\contact.html:15
+msgid "Contact"
+msgstr "Контакт"
+
+#: .\templates\new\base.html:54 .\templates\new\blogs.html:82
+#: .\templates\new\index.html:188
+msgid ""
+"Subscribe to our newsletter and get our newest updates right on your inbox."
+msgstr ""
+"Подпишитесь на нашу рассылку и получайте самые свежие обновления прямо на "
+"свой почтовый ящик."
+
+#: .\templates\new\base.html:57
+msgid "Your email"
+msgstr "Ваш адрес электронной почты"
+
+#: .\templates\new\base.html:59 .\templates\new\blogs.html:87
+#: .\templates\new\index.html:193
+msgid "I agree to the terms & conditions"
+msgstr "Я согласен с условиями"
+
+#: .\templates\new\base.html:63 .\templates\new\blogs.html:80
+#: .\templates\new\blogs.html:91 .\templates\new\index.html:197
+msgid "Subscribe"
+msgstr "Подписаться"
+
+#: .\templates\new\base.html:190
+msgid "All rights reserved | This template is made with"
+msgstr "Все права защищены | Этот шаблон создан с помощью"
+
+#: .\templates\new\base.html:190
+msgid "by Jaxongir"
+msgstr "от Jaxongir"
+
+#: .\templates\new\base.html:204
+msgid "Search here....."
+msgstr "Поиск здесь....."
+
+#: .\templates\new\blog_details.html:22 .\templates\new\index.html:29
+#: .\templates\new\index.html:155
+msgid "by"
+msgstr "к"
+
+#: .\templates\new\blog_details.html:26
+msgid "Likes:"
+msgstr "Нравится:"
+
+#: .\templates\new\blog_details.html:52
+msgid "Previous posts"
+msgstr "Предыдущие посты"
+
+#: .\templates\new\blog_details.html:67
+msgid "Next posts"
+msgstr "Следующие посты"
+
+#: .\templates\new\blog_details.html:130
+msgid "Leave a comment"
+msgstr "Оставьте комментарий"
+
+#: .\templates\new\blogs.html:16
+#, fuzzy
+#| msgid "Categories"
+msgstr "Категории"
+
+#: .\templates\new\blogs.html:20
+#, fuzzy
+#| msgid "Blogs"
+msgstr "Блоги"
+
+#: .\templates\new\contact.html:48
+msgid "GET IN TOUCH"
+msgstr "СВЯЖИТЕСЬ С НАМИ"
+
+#: .\templates\new\contact.html:57
+msgid "Submit"
+msgstr "Представлять на рассмотрение"
+
+#: .\templates\new\index.html:101
+msgid "articles"
+msgstr "статьи"
+
+#: .\templates\new\index.html:166
+msgid "Load more"
+msgstr "Загрузить больше"

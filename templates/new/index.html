@@ -1,0 +1,207 @@
+{% extends 'new/base.html' %}
+{% load static %}
+
+{% block title %}
+Home
+{% endblock %}
+{% block content %}
+<!-- Hero Section Begin -->
+<section class="hero">
+    <div class="hero__slider owl-carousel">
+        {% for blog1,blog2,blog3,blog4 in header_blogs %}
+        <div class="hero__item">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-6 p-0">
+                        <div class="hero__inside__item hero__inside__item--wide set-bg"
+                            data-setbg="{{ blog.imageURL }}">
+                            <div class="hero__inside__item__text">
+                                <div class="hero__inside__item--meta">
+                                    <span>{{ blog1.update_time.day }}</span>
+                                    <p>{{ blog1.update_time.month }}</p>
+                                </div>
+                                <div class="hero__inside__item--text">
+                                    <ul class="label">
+                                        <li>{{ blog1.category }}</li>
+                                    </ul>
+                                    <h4>{{ blog1.title }}</h4>
+                                    <ul class="widget">
+                                        <li>{% trans "by" %} <span>{{ blog1.author }}</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6  p-0">
+                        <div class="hero__inside__item hero__inside__item--small set-bg"
+                            data-setbg="{{ blog2.imageURL }}">
+                            <div class="hero__inside__item__text">
+                                <div class="hero__inside__item--meta">
+                                    <span>{{ blog2.update_time.day }}</span>
+                                    <p>{{ blog2.update_time.month }}</p>
+                                </div>
+                                <div class="hero__inside__item--text">
+                                    <ul class="label">
+                                        <li>{{ blog2.category }}</li>
+                                    </ul>
+                                    <h5>{{ blog2.title }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero__inside__item hero__inside__item--small set-bg"
+                            data-setbg="{{ blog3.imageURL }}">
+                            <div class="hero__inside__item__text">
+                                <div class="hero__inside__item--meta">
+                                    <span>{{ blog3.update_time.day }}</span>
+                                    <p>{{ blog3.update_time.month }}</p>
+                                </div>
+                                <div class="hero__inside__item--text">
+                                    <ul class="label">
+                                        <li>{{ blog3.category }}</li>
+                                    </ul>
+                                    <h5>{{ blog3.title }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6  p-0">
+                        <div class="hero__inside__item set-bg" data-setbg="{{ blog4.imageURL }}">
+                            <div class="hero__inside__item__text">
+                                <div class="hero__inside__item--meta">
+                                    <span>{{ blog4.update_time.day }}</span>
+                                    <p>{{ blog4.update_time.month }}</p>
+                                </div>
+                                <div class="hero__inside__item--text">
+                                    <ul class="label">
+                                        <li>{{ blog4.category }}</li>
+                                    </ul>
+                                    <h5>{{ blog4.title }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<!-- Hero Section End -->
+
+<!-- Categories Section Begin -->
+<section class="categories spad">
+    <div class="container">
+        <div class="row">
+            {% for category in categories %}
+                {% if forloop.counter <= 4 %}
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div style="display: flex;" class="categories__item set-bg" data-setbg="{{ category.imageURL }}">
+                        <div class="categories__hover__text">
+                            <h5>{{ category.name }}</h5>
+                            <p>{{ category.blog_count }} {% trans "articles" %}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div class="categories__post">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-8">
+                    <div class="categories__post__item categories__post__item--large">
+                        <div class="categories__post__item__pic set-bg"
+                            data-setbg="{{ main_blog.imageURL }}">
+                            <div class="post__meta">
+                                <h4>{{ main_blog.update_time.day }}</h4>
+                                <span>{{ main_blog.update_time.month }}</span>
+                            </div>
+                        </div>
+                        <div class="categories__post__item__text">
+                            <ul class="post__label--large">
+                                <li>{{ main_blog.title }}</li>
+                            </ul>
+                            <h3><a href="#">{{ main_blog.category }}</a></h3>
+                            <ul class="post__widget">
+                                <li>by <span>{{ main_blog.author }}</span></li>
+                                <li>{{ main_blog.comment_count }} Comment</li>
+                            </ul>
+                            <p>{{ main_blog.description }}</p>
+                            <a href="#" class="primary-btn">Read more</a>
+                            <div class="post__social">
+                                <span>Share</span>
+                                <a href="#"><i class="fa fa-facebook"></i> <span>82</span></a>
+                                <a href="#"><i class="fa fa-twitter"></i> <span>24</span></a>
+                                <a href="#"><i class="fa fa-envelope-o"></i> <span>08</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        {% for blog in blogs %}
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="categories__post__item">
+                                <div class="categories__post__item__pic small__item set-bg"
+                                    data-setbg="{{ blog.imageURL }}">
+                                    <div class="post__meta">
+                                        <h4>{{ blog.update_time.day }}</h4>
+                                        <span>{{ blog.update_time.month }}</span>
+                                    </div>
+                                </div>
+                                <div class="categories__post__item__text">
+                                    <span class="post__label">{{ blog.category }}</span>
+                                    <h3><a href="{% url 'blog_details' blog.id %}">{{ blog.title }}</a></h3>
+                                    <ul class="post__widget">
+                                        <li>{% trans "by" %} <span>{{ blog.author }}</span></li>
+                                        <li>{{ blog.comment_count }} Comment</li>
+                                    </ul>
+                                    <p>{{ blog.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                        <div class="col-lg-12 text-center">
+                            <div class="load__more__btn">
+                                <a href="#">{% trans "Load more" %}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="sidebar__item">
+           
+                        <div class="sidebar__item__categories">
+                            <div class="sidebar__item__title">
+                                <h6>{% trans "Categories" %}</h6>
+                            </div>
+                            <ul>
+                                {% for category in categories %}
+                                    <li><a href="{% url 'blogs' category.id %}">{{ category.name }} <span>{{ category.blog_count }}</span></a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="sidebar__subscribe__item">
+                            <div class="sidebar__item__title">
+                                <h6>Subscribe</h6>
+                            </div>
+                            <p>{% trans "Subscribe to our newsletter and get our newest updates right on your inbox." %}</p>
+                            <form action="{% url 'subscribe' %}" method="post">
+                                {% csrf_token %}
+                                <input type="text" name="email" class="email-input" placeholder="Your email">
+                                <label for="s-agree-check">
+                                    {% trans "I agree to the terms & conditions" %}
+                                    <input type="checkbox" id="s-agree-check">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <button type="submit" class="site-btn">{% trans "Subscribe" %}</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Categories Section End -->
+{% endblock %}

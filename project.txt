@@ -1,0 +1,79 @@
+register
+login
+profil
+
+
+blog yozish
+subscribe unsubscribe -> remove subscribe
+like -> like boshgan odamlarni korish
+coment yozish
+saqlash
+report
+share
+search
+blogni o'chirish
+history
+blog tavsiya qilish
+restrict user
+block user
+
+premimum
+sso
+
+
+
+
+
+Profil:
+    user -> FK
+        first_name
+        last_name
+        email
+    age
+    bio
+    image
+    phone
+    status -> active, blocked
+    subscribers -> M2M
+    block_users -> M2M
+
+Blog:
+    title
+    description
+    image
+    likes -> M2M
+    dislike -> M2M
+    view
+    status -> published, draft, blocked
+
+    created_time
+    update_time
+
+Comment:
+    blog -> FK
+    user -> FK
+    text -> FK
+    likes
+    views
+    reply -> FK
+
+report:
+    user
+    blog
+    status
+    created_time
+    update_time
+
+history:
+    user
+    blog
+
+Save:
+    user
+    blog
+
+
+user -> Profil
+blogging -> blog, comment
+report -> report
+history -> history, save

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Foodeiblog Template">
+        <meta name="keywords" content="Foodeiblog, unica, creative, html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title> {% block title %} {% endblock %}</title>
+    
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900&display=swap"
+            rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Unna:400,700&display=swap" rel="stylesheet">
+    
+        <!-- Css Styles -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    </head>
+<body>
+        <!-- Page Preloder -->
+        <div id="preloder">
+            <div class="loader"></div>
+        </div>
+    
+        <!-- Humberger Begin -->
+        <div class="humberger__menu__overlay"></div>
+        <div class="humberger__menu__wrapper">
+            <div class="humberger__menu__logo">
+                <a href="./hoindexme.html"><img src="{% static 'img/humberger/humberger-logo.png' %}" alt=""></a>
+            </div>
+            <nav class="humberger__menu__nav mobile-menu">
+                <ul>
+                    <li><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
+                    <li><a href="{% url 'blogs_filter' %}">{% trans "Blogs" %}</a></li>
+                    <li><a href="{% url 'profile' %}">{% trans "About" %}</a></li>
+                    <li><a href="{% url 'contact_us' %}">{% trans "Contact" %}</a></li>
+                </ul>
+            </nav>
+            <div id="mobile-menu-wrap"></div>
+            <div class="humberger__menu__subscribe">
+                <div class="humberger__menu__title sidebar__item__title">
+                    <h6>Subscribe</h6>
+                </div>
+                <p>{% trans "Subscribe to our newsletter and get our newest updates right on your inbox." %}</p>
+                <form action="{% url 'subscribe' %}" method="post">
+                    {% csrf_token %}
+                    <input type="text" class="email-input" placeholder="{% trans "Your email" %}">
+                    <label for="agree-check">
+                        {% trans "I agree to the terms & conditions" %}
+                        <input type="checkbox" id="agree-check">
+                        <span class="checkmark"></span>
+                    </label>
+                    <button type="submit" class="site-btn">{% trans "Subscribe" %}</button>
+                </form>
+            </div>
+        </div>
+        <!-- Humberger End -->
+    
+        <!-- Header Section Begin -->
+        <header class="header">
+            <div class="header__top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-1 col-6 order-md-1 order-1">
+                            <div class="header__humberger">
+                                <i class="fa fa-bars humberger__open"></i>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-10 order-md-2 order-3">
+                            <nav class="header__menu">
+                                <ul>
+                                    <li><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
+                                    <li><a href="{% url 'blogs_filter' %}">{% trans "Blogs" %}</a>
+                                        <div class="header__megamenu__wrapper">
+                                            <div class="header__megamenu">
+                                                {% for blog in latest_blogs %}
+                                                    <div class="header__megamenu__item">
+                                                        <div class="header__megamenu__item--pic set-bg"
+                                                            data-setbg="{{ blog.imageURL }}">
+                                                            <div class="label">{{ blog.category }}</div>
+                                                        </div>
+                                                        <div class="header__megamenu__item--text">
+                                                            <h5><a href="#">{{ blog.title|truncatewords:10 }}</a>
+                                                            </h5>
+                                                        </div>
+                                                    </div>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="active"><a href="{% url 'profile'  %}">{% trans "About" %}</a></li>
+                                    <li><a href="{% url 'contact_us' %}">{% trans "Contact" %}</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div>
+                            <div class="top_bar_content ml-auto">
+                                <div class="top_bar_menu">
+                                    <ul class="standard_dropdown top_bar_dropdown">
+                                        <li>
+                                            <a>{% get_title LANGUAGES_CODE %}<i class="fas fa-chevron-down"></i></a>
+                                            <ul>
+                                                {% for language , title in languages %}
+                                                    {% get_url_tag request=request lang=language as url %}
+                                                    <li id="en" onclick="changeSelect('En')"><a href="{{ url }}">{{ title }}</a></li>
+                                                {% endfor %}
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2 col-md-1 col-6 order-md-3 order-2">
+                            <div class="header__search">
+                                <i class="fa fa-search search-switch"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md col-md-2-3">
+                        <div class="header__btn">
+                            <a href="{% url 'home' %}" class="primary-btn">{% trans "Home" %}</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md col-md-2-6">
+                        <div class="header__logo">
+                            <a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md col-md-2-3">
+                        <div class="header__social">
+                            <a href="{{ contact.facebook }}"><i class="fa fa-facebook"></i></a>
+                            <a href="{{ contact.telegram }}"><i class="fa fa-telegram"></i></a>
+                            <a href="{{ contact.youtube }}"><i class="fa fa-youtube-play"></i></a>
+                            <a href="{{ contact.instagram }}"><i class="fa fa-instagram"></i></a>
+                            <a href="{{ contact.email }}"><i class="fa fa-envelope-o"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Header Section End -->
+
+        {% block content %}
+        {% endblock %}
+            <!-- Footer Section Begin -->
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="footer__instagram">
+                    <div class="row">
+                        {% for image in footer %}
+                        <div class="col-lg-2 col-md-2 col-sm-4 col-6">
+                            <div class="footer__instagram__item set-bg" data-setbg="{{ image.imageURL }}"></div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer__text">
+                            <div class="footer__logo">
+                                <a href="#"><img src="{% static 'img/logo.png' %}" alt=""></a>
+                            </div>
+                            <div class="footer__social">
+                                <a href="{{ contact.facebook }}"><i class="fa fa-facebook"></i></a>
+                                <a href="{{ contact.telegram }}"><i class="fa fa-telegram"></i></a>
+                                <a href="{{ contact.youtube }}"><i class="fa fa-youtube-play"></i></a>
+                                <a href="{{ contact.instagram }}"><i class="fa fa-instagram"></i></a>
+                                <a href="{{ contact.email }}"><i class="fa fa-envelope-o"></i></a>
+                            </div>
+                        </div>
+                        <div class="footer__copyright">
+                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> {% trans "All rights reserved | This template is made with" %} <i class="fa fa-heart" aria-hidden="true"></i> {% trans "by Jaxongir" %}
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer Section End -->
+
+        <!-- Search Begin -->
+        <div class="search-model">
+            <div class="h-100 d-flex align-items-center justify-content-center">
+                <div class="search-close-switch">+</div>
+                <form action="{% url 'blogs_filter' %}" class="search-model-form" method="get">
+                    <input type="text" id="search-input" name="title" placeholder="{% trans "Search here....." %}">
+                </form>
+            </div>
+        </div>
+        <!-- Search End -->
+
+    {% block script %}
+    {% endblock %}
+
+
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
+</body>
+</html>

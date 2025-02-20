@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img src="{{ blog.imageURL }}" alt="">
+        <p>Author: {{ blog.author }} <img  onclick="subscribe('{{ blog.author.id }}')" style="width: 15px; cursor: pointer;" id="change_icon" src="{% if check %} {% static 'img/unsubscribe.png' %} {% else %} {% static 'img/add-user.png' %} {% endif %}" alt=""></p>
+        <p>Description: {{ blog.description }}</p>
+        <p>Views: {{ blog.view }}</p>
+        <p> <strong style="cursor: pointer;" onclick="like('{{ blog.id }}')">Likes:</strong> <span id="like">{{ blog.likes.count }}</span></p>
+        <p> <strong style="cursor: pointer;" onclick="dislike('{{ blog.id }}')">Dislikes:</strong> <span id="dislike">{{ blog.dislike.count }}</span></p>
+    </div>
+
+    <div>
+        <img id="bookmark" onclick="save('{{ blog.id }}')" style="width: 20px; cursor: pointer;" src="{% if check2 %} {% static 'img/bookmark.png' %} {% else %} {% static 'img/save-instagram.png' %} {% endif %}" alt="">
+    </div>
+
+    <h2>Leave a comment</h2>
+    <hr>
+    <div id="reply_box" style="display: none;">Reply text</div>
+    <form action="{% url 'create_comment' blog.id %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="reply" id="reply_input">
+        <input type="text" name="text">
+        <button>Create</button>
+
+    </form>
+    <h3>Comments</h3>
+    {% for comment in comments %}
+
+    <div>
+        <p>user:{{ comment.user }}</p>
+        <p>text: {{ comment.text }} <strong style="cursor: pointer;" ondblclick="reply('{{ comment.text }}', '{{ comment.id }}')">reply</strong></p>
+    </div>
+        <h4>replies</h4>
+        {% for reply in comment.replies.all %}
+            <div>
+                <p>user: {{ reply.user }}</p>
+                <p>text: {{ reply.text }}</p>
+            </div>
+        {% endfor %}
+        <hr>
+    {% endfor %}
+</body>
+
+<script>
+    function like(blog_id){
+        url = `/like_view/${blog_id}/`
+        fetch(url).then((response)=>{
+            response.json().then((data) => {
+                document.getElementById('like').innerHTML = data['like']
+                document.getElementById('dislike').innerHTML = data['dislike']
+            })
+        })
+    }
+
+    function reply(comment_text, comment_id){
+        r = document.getElementById('reply_box');
+        document.getElementById('reply_input').value = comment_id;
+        r.style.display = 'block';
+        r.innerHTML = comment_text;
+
+    }
+
+    function dislike(blog_id){
+        url = `/dislike_view/${blog_id}/`
+        fetch(url).then((response)=>{
+            response.json().then((data) => {
+                document.getElementById('like').innerHTML = data['like']
+                document.getElementById('dislike').innerHTML = data['dislike']
+            })
+        })
+    }
+
+    function subscribe(author_id){
+        url = `/subscribe/${author_id}`
+        fetch(url).then((response)=>{
+            response.json().then((data) => {
+                icon = document.getElementById("change_icon")
+                if (data['check']){
+                    icon.src = "/static/img/unsubscribe.png"
+                }
+                else{
+                    icon.src = "/static/img/add-user.png"
+                }
+            })
+        })
+    }
+
+    function save(blog_id){
+        url = `/save_blog/${blog_id}`
+        fetch(url).then((response)=>{
+            response.json().then((data) => {
+                icon = document.getElementById("bookmark")
+                if (data['check2']){
+                    icon.src = "/static/img/save-instagram.png"
+                }
+                else{
+                    icon.src = "/static/img/bookmark.png"
+                }
+            })
+        })
+    }
+
+</script>
+
+
+</html>

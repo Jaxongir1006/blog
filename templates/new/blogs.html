@@ -1,0 +1,105 @@
+{% extends 'new/base.html' %}
+{% load static %}
+
+<body>
+
+    {% block content %}
+    <!-- Categories Section Begin -->
+    <section class="categories categories-grid spad">
+        <div class="categories__post">
+            <div class="container">
+                <div class="categories__grid__post">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8">
+                            <div class="breadcrumb__text">
+                                {% if category %}
+                                    <h2>{% trans "Categories:" %} <span>{{ category.name }}</span></h2>
+                                {% endif %}
+                                <div class="breadcrumb__option">
+                                    <a href="{% url 'home' %}">{% trans "Home" %}</a>
+                                    <span>{% trans "blogs" %}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                {% for blog in blogs %}
+                                    <div class="col-lg-6 col-md-6 col-sm-6">
+                                        <div class="categories__post__item">
+                                            <div class="categories__post__item__pic small__item set-bg"
+                                                data-setbg="{{ blog.imageURL }}">
+                                                <div class="post__meta">
+                                                    <h4>{{ blog.update_time.day }}</h4>
+                                                    <span>{{ blog.update_time.month }}</span>
+                                                </div>
+                                            </div>
+                                            <div class="categories__post__item__text">
+                                                <span class="post__label">{{ blog.category }}</span>
+                                                <h3><a href="{% url 'blog_details' blog.id %}">{{ blog.title }}</a></h3>
+                                                <ul class="post__widget">
+                                                    <li>by <span>{{ blog.author }}</span></li>
+                                                    <li>{{ blog.comment_count }} Comment</li>
+                                                </ul>
+                                                <p>{{ blog.description }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                                <div class="col-lg-12 text-center">
+                                    <div class="pagination">
+                                        <span class="step-links">
+                                            {% if blogs.has_previous %}
+                                                <a href="?page={{ blogs.previous_page_number }}">previous</a>
+                                            {% endif %}
+                                    
+                                            <span class="current">
+                                                Page {{ blogs.number }} of {{ blogs.paginator.num_pages }}.
+                                            </span>
+                                    
+                                            {% if blogs.has_next %}
+                                                <a href="?page={{ blogs.next_page_number }}">next</a>
+                                            {% endif %}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="sidebar__item">
+                                <div class="sidebar__about__item">
+                                <div class="sidebar__item__categories">
+                                    <div class="sidebar__item__title">
+                                        <h6>{% trans "Categories" %}</h6>
+                                    </div>
+                                    <ul>
+                                        {% for category in categories %}
+                                            <li><a href="{% url 'blogs' category.id %}">{{ category.name }} <span>{{ category.blog_count }}</span></a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                <div class="sidebar__subscribe__item">
+                                    <div class="sidebar__item__title">
+                                        <h6>{% trans "Subscribe" %}</h6>
+                                    </div>
+                                    <p>{% trans "Subscribe to our newsletter and get our newest updates right on your inbox." %}</p>
+                                    <form action="{% url 'subscribe' %}" method="post">
+                                        {% csrf_token %}
+                                        <input type="text" name="email" class="email-input" placeholder="Your email">
+                                        <label for="s-agree-check">
+                                            {% trans "I agree to the terms & conditions" %}
+                                            <input type="checkbox" id="s-agree-check">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <button type="submit" class="site-btn">{% trans "Subscribe" %}</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Categories Section End -->
+    {% endblock %}
+
+
+</html>

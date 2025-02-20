@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blogs</title>
+</head>
+<body>
+    <h1>My Blogs</h1>
+    {% for blog in blogs %}
+    <div>
+        <p>Title: {{ blog.title }}</p>
+        <img src="{{ blog.imageURL}}" alt="{{ blog.title }}">
+        <p>Status: {{ blog.status }}</p>
+        <p>Description: {{ blog.description|truncatewords:20 }}</p>
+    </div>
+    <div>
+        <a href="{% url 'update_blog' blog.id %}"><button>Update Blog</button></a>
+    </div>
+    <div>
+        <a href="{% url 'delete_blog' blog.id %}"><button>Delete Blog</button></a>
+    </div>
+    {% endfor %}
+
+</body>
+</html>

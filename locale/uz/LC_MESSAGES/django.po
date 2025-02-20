@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-13 20:05+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\blogging\models.py:9
+msgid "name"
+msgstr "ism"
+
+#: .\blogging\models.py:12
+msgid "image"
+msgstr "rasm"
+
+#: .\blogging\models.py:18
+msgid "Category"
+msgstr "Kategoriya"
+
+#: .\blogging\models.py:19 .\templates\new\blogs.html:70
+#: .\templates\new\index.html:176
+msgid "Categories"
+msgstr "Kategoriyalar"
+
+#: .\blogging\models.py:59
+msgid "Yangi blog"
+msgstr "Yangi blog"
+
+#: .\blogging\models.py:60
+msgid "Yangi bloglar"
+msgstr "Yangi bloglar"
+
+#: .\blogging\models.py:100 .\templates\new\blog_details.html:23
+msgid "Comment"
+msgstr "Kamment"
+
+#: .\blogging\models.py:101
+msgid "Comments"
+msgstr "Kammentlar"
+
+#: .\blogging\models.py:108 .\blogging\models.py:119
+msgid "FooterImages"
+msgstr "FooterImages"
+
+#: .\blogging\models.py:118
+#, fuzzy
+#| msgid "FooterImages"
+msgstr "FooterImages"
+
+#: .\templates\new\about.html:16 .\templates\new\base.html:43
+#: .\templates\new\base.html:82 .\templates\new\base.html:136
+#: .\templates\new\blogs.html:19 .\templates\new\contact.html:14
+msgid "Home"
+msgstr "Uy"
+
+#: .\templates\new\about.html:17 .\templates\new\base.html:45
+#: .\templates\new\base.html:101
+msgid "About"
+msgstr "Sayt haqida"
+
+#: .\templates\new\about.html:30
+msgid "Hello every one !!!"
+msgstr "Salom hammaga !!!"
+
+#: .\templates\new\about.html:34
+msgid "You didn't write anything here..."
+msgstr "Siz bu yerga hech nima yozmagansz..."
+
+#: .\templates\new\base.html:44 .\templates\new\base.html:83
+msgid "Blogs"
+msgstr "Bloglar"
+
+#: .\templates\new\base.html:46 .\templates\new\base.html:102
+#: .\templates\new\contact.html:12 .\templates\new\contact.html:15
+msgid "Contact"
+msgstr "Aloqa xizmati"
+
+#: .\templates\new\base.html:54 .\templates\new\blogs.html:82
+#: .\templates\new\index.html:188
+msgid ""
+"Subscribe to our newsletter and get our newest updates right on your inbox."
+msgstr ""
+"Axborot byulletenimizga obuna bo'ling va so'nggi yangiliklarimizni pochta "
+"qutingizga oling."
+
+#: .\templates\new\base.html:57
+msgid "Your email"
+msgstr "Emailingiz"
+
+#: .\templates\new\base.html:59 .\templates\new\blogs.html:87
+#: .\templates\new\index.html:193
+msgid "I agree to the terms & conditions"
+msgstr "Men shartlarga roziman"
+
+#: .\templates\new\base.html:63 .\templates\new\blogs.html:80
+#: .\templates\new\blogs.html:91 .\templates\new\index.html:197
+msgid "Subscribe"
+msgstr "Obuna bo'lish"
+
+#: .\templates\new\base.html:190
+msgid "All rights reserved | This template is made with"
+msgstr "Barcha huquqlar himoyalangan | Ushbu shablon yordamida yaratilgan"
+
+#: .\templates\new\base.html:190
+msgid "by Jaxongir"
+msgstr "Jaxongir tomonidan"
+
+#: .\templates\new\base.html:204
+msgid "Search here....."
+msgstr "Shu yerdan qidiring..."
+
+#: .\templates\new\blog_details.html:22 .\templates\new\index.html:29
+#: .\templates\new\index.html:155
+msgid "by"
+msgstr "tomonidan"
+
+#: .\templates\new\blog_details.html:26
+msgid "Likes:"
+msgstr "Likelar:"
+
+#: .\templates\new\blog_details.html:52
+msgid "Previous posts"
+msgstr "Oldingi postlar:"
+
+#: .\templates\new\blog_details.html:67
+msgid "Next posts"
+msgstr "Keyingi postlar"
+
+#: .\templates\new\blog_details.html:130
+msgid "Leave a comment"
+msgstr "Kamment qoldiring"
+
+#: .\templates\new\blogs.html:16
+#, fuzzy
+#| msgid "Categories"
+msgid "Categories:"
+msgstr "Kategoriyalar"
+
+#: .\templates\new\blogs.html:20
+#, fuzzy
+#| msgid "Blogs"
+msgstr "Bloglar"
+
+#: .\templates\new\contact.html:48
+msgid "GET IN TOUCH"
+msgstr "BOG'LANING"
+
+#: .\templates\new\contact.html:57
+msgid "Submit"
+msgstr "Yuborish"
+
+#: .\templates\new\index.html:101
+msgid "articles"
+msgstr "artikllar"
+
+#: .\templates\new\index.html:166
+msgid "Load more"
+msgstr "Ko'proq yuklash"
