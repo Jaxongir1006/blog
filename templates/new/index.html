@@ -1,5 +1,6 @@
 {% extends 'new/base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}
 Home
@@ -26,7 +27,7 @@ Home
                                     </ul>
                                     <h4>{{ blog1.title }}</h4>
                                     <ul class="widget">
-                                        <li>{% trans "by" %} <span>{{ blog1.author }}</span></li>
+                                        <li>by<span>{{ blog1.author }}</span></li>
                                     </ul>
                                 </div>
                             </div>

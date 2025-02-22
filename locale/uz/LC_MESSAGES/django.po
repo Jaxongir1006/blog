@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-13 20:05+0500\n"
+"POT-Creation-Date: 2025-02-22 19:21+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,7 +31,7 @@ msgid "Category"
 msgstr "Kategoriya"
 
 #: .\blogging\models.py:19 .\templates\new\blogs.html:70
-#: .\templates\new\index.html:176
+#: .\templates\new\index.html:177
 msgid "Categories"
 msgstr "Kategoriyalar"
 
@@ -58,16 +58,17 @@ msgstr "FooterImages"
 #: .\blogging\models.py:118
 #, fuzzy
 #| msgid "FooterImages"
+msgid "FooterImage"
 msgstr "FooterImages"
 
-#: .\templates\new\about.html:16 .\templates\new\base.html:43
-#: .\templates\new\base.html:82 .\templates\new\base.html:136
+#: .\templates\new\about.html:16 .\templates\new\base.html:40
+#: .\templates\new\base.html:79 .\templates\new\base.html:133
 #: .\templates\new\blogs.html:19 .\templates\new\contact.html:14
 msgid "Home"
 msgstr "Uy"
 
-#: .\templates\new\about.html:17 .\templates\new\base.html:45
-#: .\templates\new\base.html:101
+#: .\templates\new\about.html:17 .\templates\new\base.html:42
+#: .\templates\new\base.html:98
 msgid "About"
 msgstr "Sayt haqida"
 
@@ -79,51 +80,49 @@ msgstr "Salom hammaga !!!"
 msgid "You didn't write anything here..."
 msgstr "Siz bu yerga hech nima yozmagansz..."
 
-#: .\templates\new\base.html:44 .\templates\new\base.html:83
+#: .\templates\new\base.html:41 .\templates\new\base.html:80
 msgid "Blogs"
 msgstr "Bloglar"
 
-#: .\templates\new\base.html:46 .\templates\new\base.html:102
+#: .\templates\new\base.html:43 .\templates\new\base.html:99
 #: .\templates\new\contact.html:12 .\templates\new\contact.html:15
 msgid "Contact"
 msgstr "Aloqa xizmati"
 
-#: .\templates\new\base.html:54 .\templates\new\blogs.html:82
-#: .\templates\new\index.html:188
+#: .\templates\new\base.html:51 .\templates\new\blogs.html:82
+#: .\templates\new\index.html:189
 msgid ""
 "Subscribe to our newsletter and get our newest updates right on your inbox."
 msgstr ""
 "Axborot byulletenimizga obuna bo'ling va so'nggi yangiliklarimizni pochta "
-"qutingizga oling."
 
-#: .\templates\new\base.html:57
+#: .\templates\new\base.html:54
 msgid "Your email"
 msgstr "Emailingiz"
 
-#: .\templates\new\base.html:59 .\templates\new\blogs.html:87
-#: .\templates\new\index.html:193
+#: .\templates\new\base.html:56 .\templates\new\blogs.html:87
+#: .\templates\new\index.html:194
 msgid "I agree to the terms & conditions"
 msgstr "Men shartlarga roziman"
 
-#: .\templates\new\base.html:63 .\templates\new\blogs.html:80
-#: .\templates\new\blogs.html:91 .\templates\new\index.html:197
+#: .\templates\new\base.html:60 .\templates\new\blogs.html:80
+#: .\templates\new\blogs.html:91 .\templates\new\index.html:198
 msgid "Subscribe"
 msgstr "Obuna bo'lish"
 
-#: .\templates\new\base.html:190
+#: .\templates\new\base.html:187
 msgid "All rights reserved | This template is made with"
 msgstr "Barcha huquqlar himoyalangan | Ushbu shablon yordamida yaratilgan"
 
-#: .\templates\new\base.html:190
+#: .\templates\new\base.html:187
 msgid "by Jaxongir"
 msgstr "Jaxongir tomonidan"
 
-#: .\templates\new\base.html:204
+#: .\templates\new\base.html:201
 msgid "Search here....."
 msgstr "Shu yerdan qidiring..."
 
-#: .\templates\new\blog_details.html:22 .\templates\new\index.html:29
-#: .\templates\new\index.html:155
+#: .\templates\new\blog_details.html:22 .\templates\new\index.html:156
 msgid "by"
 msgstr "tomonidan"
 
@@ -152,20 +151,21 @@ msgstr "Kategoriyalar"
 #: .\templates\new\blogs.html:20
 #, fuzzy
 #| msgid "Blogs"
+msgid "blogs"
 msgstr "Bloglar"
 
 #: .\templates\new\contact.html:48
 msgid "GET IN TOUCH"
-msgstr "BOG'LANING"
+msgstr "BIZ BILAN ALOQADA BOLING"
 
 #: .\templates\new\contact.html:57
 msgid "Submit"
 msgstr "Yuborish"
 
-#: .\templates\new\index.html:101
+#: .\templates\new\index.html:102
 msgid "articles"
 msgstr "artikllar"
 
-#: .\templates\new\index.html:166
+#: .\templates\new\index.html:167
 msgid "Load more"
 msgstr "Ko'proq yuklash"

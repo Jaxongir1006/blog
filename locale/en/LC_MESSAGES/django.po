@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-13 20:05+0500\n"
+"POT-Creation-Date: 2025-02-22 19:16+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,13 +31,13 @@ msgid "Category"
 msgstr "Category"
 
 #: .\blogging\models.py:19 .\templates\new\blogs.html:70
-#: .\templates\new\index.html:176
+#: .\templates\new\index.html:177
 msgid "Categories"
 msgstr "Categories"
 
 #: .\blogging\models.py:59
 msgid "Yangi blog"
-msgstr "New blog
+msgstr "New blog"
 
 #: .\blogging\models.py:60
 msgid "Yangi bloglar"
@@ -61,14 +61,14 @@ msgstr "FooterImages"
 msgid "FooterImage"
 msgstr "FooterImages"
 
-#: .\templates\new\about.html:16 .\templates\new\base.html:43
-#: .\templates\new\base.html:82 .\templates\new\base.html:136
+#: .\templates\new\about.html:16 .\templates\new\base.html:40
+#: .\templates\new\base.html:79 .\templates\new\base.html:133
 #: .\templates\new\blogs.html:19 .\templates\new\contact.html:14
 msgid "Home"
 msgstr "Home"
 
-#: .\templates\new\about.html:17 .\templates\new\base.html:45
-#: .\templates\new\base.html:101
+#: .\templates\new\about.html:17 .\templates\new\base.html:42
+#: .\templates\new\base.html:98
 msgid "About"
 msgstr "About"
 
@@ -80,50 +80,49 @@ msgstr "Hello every one !!!"
 msgid "You didn't write anything here..."
 msgstr "You didn't write anything here..."
 
-#: .\templates\new\base.html:44 .\templates\new\base.html:83
+#: .\templates\new\base.html:41 .\templates\new\base.html:80
 msgid "Blogs"
 msgstr "Blogs"
 
-#: .\templates\new\base.html:46 .\templates\new\base.html:102
+#: .\templates\new\base.html:43 .\templates\new\base.html:99
 #: .\templates\new\contact.html:12 .\templates\new\contact.html:15
 msgid "Contact"
 msgstr "Contact"
 
-#: .\templates\new\base.html:54 .\templates\new\blogs.html:82
-#: .\templates\new\index.html:188
+#: .\templates\new\base.html:51 .\templates\new\blogs.html:82
+#: .\templates\new\index.html:189
 msgid ""
 "Subscribe to our newsletter and get our newest updates right on your inbox."
 msgstr ""
 "Subscribe to our newsletter and get our newest updates right on your inbox."
 
-#: .\templates\new\base.html:57
+#: .\templates\new\base.html:54
 msgid "Your email"
 msgstr "Your email"
 
-#: .\templates\new\base.html:59 .\templates\new\blogs.html:87
-#: .\templates\new\index.html:193
+#: .\templates\new\base.html:56 .\templates\new\blogs.html:87
+#: .\templates\new\index.html:194
 msgid "I agree to the terms & conditions"
 msgstr "I agree to the terms & conditions"
 
-#: .\templates\new\base.html:63 .\templates\new\blogs.html:80
-#: .\templates\new\blogs.html:91 .\templates\new\index.html:197
+#: .\templates\new\base.html:60 .\templates\new\blogs.html:80
+#: .\templates\new\blogs.html:91 .\templates\new\index.html:198
 msgid "Subscribe"
 msgstr "Subscribe"
 
-#: .\templates\new\base.html:190
+#: .\templates\new\base.html:187
 msgid "All rights reserved | This template is made with"
 msgstr "All rights reserved | This template is made with"
 
-#: .\templates\new\base.html:190
+#: .\templates\new\base.html:187
 msgid "by Jaxongir"
 msgstr "by Jaxongir"
 
-#: .\templates\new\base.html:204
+#: .\templates\new\base.html:201
 msgid "Search here....."
 msgstr "Search here....."
 
-#: .\templates\new\blog_details.html:22 .\templates\new\index.html:29
-#: .\templates\new\index.html:155
+#: .\templates\new\blog_details.html:22 .\templates\new\index.html:156
 msgid "by"
 msgstr "by"
 
@@ -163,10 +162,10 @@ msgstr "GET IN TOUCH"
 msgid "Submit"
 msgstr "Submit"
 
-#: .\templates\new\index.html:101
+#: .\templates\new\index.html:102
 msgid "articles"
 msgstr "articles"
 
-#: .\templates\new\index.html:166
+#: .\templates\new\index.html:167
 msgid "Load more"
 msgstr "Load more"

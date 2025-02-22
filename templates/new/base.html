@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+{% load static i18n %}
+{% load custom_tags %}
+
+{% get_current_language as LANGUAGES_CODE %} 
+{% get_available_languages as languages %}
+
+
 <html lang="en">
     <head>
         <meta charset="UTF-8">

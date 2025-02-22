@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-13 20:05+0500\n"
+"POT-Creation-Date: 2025-02-22 19:20+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -33,7 +33,7 @@ msgid "Category"
 msgstr "Категория"
 
 #: .\blogging\models.py:19 .\templates\new\blogs.html:70
-#: .\templates\new\index.html:176
+#: .\templates\new\index.html:177
 msgid "Categories"
 msgstr "Категории"
 
@@ -60,16 +60,17 @@ msgstr "Изображения нижнего колонтитула"
 #: .\blogging\models.py:118
 #, fuzzy
 #| msgid "FooterImages"
+msgid "FooterImage"
 msgstr "Изображения нижнего колонтитула"
 
-#: .\templates\new\about.html:16 .\templates\new\base.html:43
-#: .\templates\new\base.html:82 .\templates\new\base.html:136
+#: .\templates\new\about.html:16 .\templates\new\base.html:40
+#: .\templates\new\base.html:79 .\templates\new\base.html:133
 #: .\templates\new\blogs.html:19 .\templates\new\contact.html:14
 msgid "Home"
 msgstr "Дом"
 
-#: .\templates\new\about.html:17 .\templates\new\base.html:45
-#: .\templates\new\base.html:101
+#: .\templates\new\about.html:17 .\templates\new\base.html:42
+#: .\templates\new\base.html:98
 msgid "About"
 msgstr "О чем"
 
@@ -81,51 +82,50 @@ msgstr "Всем привет !!!"
 msgid "You didn't write anything here..."
 msgstr "Вы здесь ничего не написали..."
 
-#: .\templates\new\base.html:44 .\templates\new\base.html:83
+#: .\templates\new\base.html:41 .\templates\new\base.html:80
 msgid "Blogs"
 msgstr "Блоги"
 
-#: .\templates\new\base.html:46 .\templates\new\base.html:102
+#: .\templates\new\base.html:43 .\templates\new\base.html:99
 #: .\templates\new\contact.html:12 .\templates\new\contact.html:15
 msgid "Contact"
 msgstr "Контакт"
 
-#: .\templates\new\base.html:54 .\templates\new\blogs.html:82
-#: .\templates\new\index.html:188
+#: .\templates\new\base.html:51 .\templates\new\blogs.html:82
+#: .\templates\new\index.html:189
 msgid ""
 "Subscribe to our newsletter and get our newest updates right on your inbox."
 msgstr ""
 "Подпишитесь на нашу рассылку и получайте самые свежие обновления прямо на "
 "свой почтовый ящик."
 
-#: .\templates\new\base.html:57
+#: .\templates\new\base.html:54
 msgid "Your email"
 msgstr "Ваш адрес электронной почты"
 
-#: .\templates\new\base.html:59 .\templates\new\blogs.html:87
-#: .\templates\new\index.html:193
+#: .\templates\new\base.html:56 .\templates\new\blogs.html:87
+#: .\templates\new\index.html:194
 msgid "I agree to the terms & conditions"
 msgstr "Я согласен с условиями"
 
-#: .\templates\new\base.html:63 .\templates\new\blogs.html:80
-#: .\templates\new\blogs.html:91 .\templates\new\index.html:197
+#: .\templates\new\base.html:60 .\templates\new\blogs.html:80
+#: .\templates\new\blogs.html:91 .\templates\new\index.html:198
 msgid "Subscribe"
 msgstr "Подписаться"
 
-#: .\templates\new\base.html:190
+#: .\templates\new\base.html:187
 msgid "All rights reserved | This template is made with"
 msgstr "Все права защищены | Этот шаблон создан с помощью"
 
-#: .\templates\new\base.html:190
+#: .\templates\new\base.html:187
 msgid "by Jaxongir"
 msgstr "от Jaxongir"
 
-#: .\templates\new\base.html:204
+#: .\templates\new\base.html:201
 msgid "Search here....."
 msgstr "Поиск здесь....."
 
-#: .\templates\new\blog_details.html:22 .\templates\new\index.html:29
-#: .\templates\new\index.html:155
+#: .\templates\new\blog_details.html:22 .\templates\new\index.html:156
 msgid "by"
 msgstr "к"
 
@@ -148,11 +148,13 @@ msgstr "Оставьте комментарий"
 #: .\templates\new\blogs.html:16
 #, fuzzy
 #| msgid "Categories"
+msgid "Categories:"
 msgstr "Категории"
 
 #: .\templates\new\blogs.html:20
 #, fuzzy
 #| msgid "Blogs"
+msgid "blogs"
 msgstr "Блоги"
 
 #: .\templates\new\contact.html:48
@@ -163,10 +165,10 @@ msgstr "СВЯЖИТЕСЬ С НАМИ"
 msgid "Submit"
 msgstr "Представлять на рассмотрение"
 
-#: .\templates\new\index.html:101
+#: .\templates\new\index.html:102
 msgid "articles"
 msgstr "статьи"
 
-#: .\templates\new\index.html:166
+#: .\templates\new\index.html:167
 msgid "Load more"
 msgstr "Загрузить больше"
